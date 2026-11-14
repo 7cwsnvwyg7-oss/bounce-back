@@ -15,8 +15,8 @@ func _ready():
 	get_tree().paused = false
 
 func blokkok_letrehozasa():
-	var oszlopok := 8
-	var sorok := 10
+	var oszlopok := 10
+	var sorok := 5
 
 	# Ezt csak egyszer sorsoljuk ki, a ciklusok előtt.
 	var extra_élet := randi_range(0, oszlopok - 1)

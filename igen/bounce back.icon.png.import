@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br7avn6vjhj2g"
-path="res://.godot/imported/laszti.jpg-24ba3ba6ca09f66ff4728760515d3ddd.ctex"
+uid="uid://cl6m2ll6mu0b7"
+path="res://.godot/imported/bounce back.icon.png-faadd79dc36df93767c24ee37edc5a50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://laszti.jpg"
-dest_files=["res://.godot/imported/laszti.jpg-24ba3ba6ca09f66ff4728760515d3ddd.ctex"]
+source_file="res://igen/bounce back.icon.png"
+dest_files=["res://.godot/imported/bounce back.icon.png-faadd79dc36df93767c24ee37edc5a50.ctex"]
 
 [params]
 
