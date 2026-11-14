@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cgsaqw7cqar54" path="res://hatter2.webp" id="2_ipr7c"]
 [ext_resource type="Texture2D" uid="uid://crvit4e74i1wh" path="res://nem.png" id="4_1mx04"]
 [ext_resource type="Script" uid="uid://dak7v3j480rnu" path="res://padló.gd" id="4_5y8vx"]
+[ext_resource type="AudioStream" uid="uid://ethsmk75b41q" path="res://reganati-chillcalming-chiptune-loop-527182 (1).mp3" id="6_ipr7c"]
+[ext_resource type="Texture2D" uid="uid://btbgow574m54" path="res://nem.jpg" id="6_p6kj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx8n8"]
 size = Vector2(175, 9)
@@ -114,9 +116,19 @@ offset_bottom = 524.0
 theme_override_font_sizes/font_size = 70
 
 [node name="score" type="Label" parent="CanvasLayer" unique_id=1162104349]
-offset_left = 1016.0
+offset_left = 1061.0
 offset_top = 40.0
 offset_right = 1134.0
-offset_bottom = 88.0
+offset_bottom = 73.0
+
+[node name="IntroKep" type="TextureRect" parent="CanvasLayer" unique_id=888142443]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_p6kj0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1470112342]
+stream = ExtResource("6_ipr7c")
+volume_db = 24.0
+autoplay = true
 
 [connection signal="child_entered_tree" from="labda" to="padló/padló" method="_on_labda_child_entered_tree"]
