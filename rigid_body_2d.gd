@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 	# A padló találatakor életet veszít.
 	if utkozott_test == padlo:
-		elet += 1
+		elet -= 1
 
 		if is_instance_valid(lives_label):
 			lives_label.text = "Élet: " + str(elet)

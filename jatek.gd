@@ -5,15 +5,21 @@ const TAVOLSAG := 8.0
 
 func _ready():
 	blokkok_letrehozasa()
+	$CanvasLayer/IntroKep.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	get_tree().paused = true
+	$CanvasLayer/IntroKep.show()
+
+	await get_tree().create_timer(2.0, true).timeout
+
+	$CanvasLayer/IntroKep.hide()
+	get_tree().paused = false
 
 func blokkok_letrehozasa():
-	var oszlopok := 8
-	var sorok := 1
+	var oszlopok := 10
+	var sorok := 5
 
 	# Ezt csak egyszer sorsoljuk ki, a ciklusok előtt.
 	var extra_élet := randi_range(0, oszlopok - 1)
-	@warning_ignore("unused_variable")
-	var extra_labda_oszlop := randi_range(0, oszlopok - 1)
 
 	var teljes_szelesseg := oszlopok * BLOKK_MERET.x + (oszlopok - 1) * TAVOLSAG
 	var kezdo_x := (960.0 - teljes_szelesseg) / 2.0 + BLOKK_MERET.x / 2.0
