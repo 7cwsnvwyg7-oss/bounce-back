@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 850.0
+@export var speed: float = 750.0
 @export var elet: int = 5
 @export var padlo: StaticBody2D
 @export var lives_label: Label
@@ -37,12 +37,15 @@ func _physics_process(delta: float) -> void:
 			lives_label.text = "Élet: " + str(elet)
 
 		if elet <= 0:
-			if is_instance_valid(game_over_label):
 				game_over_label.text = "Meghaltál!"
 				game_over_label.show()
 
-			get_tree().paused = true
+				get_tree().paused = true
 
 	# A blokkok találatkor eltűnnek.
 	elif utkozott_test is Node and utkozott_test.is_in_group("blokkok"):
 		utkozott_test.queue_free()
+		
+		if utkozott_test.is_in_group("extra_élet"):
+			elet += 1
+			lives_label.text = "Élet: " + str(elet)
