@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6xm3u7mxng2s" path="res://jatek.gd" id="1_1mx04"]
 [ext_resource type="Script" uid="uid://bw0hwfd7iu17k" path="res://tálca.gd" id="1_6ti0s"]
 [ext_resource type="Script" uid="uid://pqkbrhs3djyh" path="res://rigid_body_2d.gd" id="2_blt18"]
+[ext_resource type="Texture2D" uid="uid://cgsaqw7cqar54" path="res://hatter2.webp" id="2_ipr7c"]
 [ext_resource type="Texture2D" uid="uid://crvit4e74i1wh" path="res://nem.png" id="4_1mx04"]
 [ext_resource type="Script" uid="uid://dak7v3j480rnu" path="res://padló.gd" id="4_5y8vx"]
 
@@ -26,6 +27,11 @@ size = Vector2(1150, 2)
 
 [node name="jatek" type="Node2D" unique_id=1130991843]
 script = ExtResource("1_1mx04")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073038346]
+position = Vector2(584, 368)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ipr7c")
 
 [node name="Tálca" type="CharacterBody2D" parent="." unique_id=1621433082]
 script = ExtResource("1_6ti0s")

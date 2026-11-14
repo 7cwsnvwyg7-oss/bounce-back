@@ -2,13 +2,13 @@ extends Node2D
 
 const BLOKK_MERET := Vector2(70, 24)
 const TAVOLSAG := 8.0
-
+	
 func _ready():
 	blokkok_letrehozasa()
 
 func blokkok_letrehozasa():
 	var oszlopok := 8
-	var sorok := 1
+	var sorok := 10
 
 	# Ezt csak egyszer sorsoljuk ki, a ciklusok előtt.
 	var extra_élet := randi_range(0, oszlopok - 1)
