@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cia8tqmamt2kv"]
 
+[ext_resource type="Script" uid="uid://c6xm3u7mxng2s" path="res://jatek.gd" id="1_1mx04"]
 [ext_resource type="Script" uid="uid://bw0hwfd7iu17k" path="res://tálca.gd" id="1_6ti0s"]
 [ext_resource type="Script" uid="uid://pqkbrhs3djyh" path="res://rigid_body_2d.gd" id="2_blt18"]
 [ext_resource type="Texture2D" uid="uid://br7avn6vjhj2g" path="res://laszti.jpg" id="3_5y8vx"]
@@ -26,6 +27,7 @@ size = Vector2(1150, 2)
 size = Vector2(100, 35)
 
 [node name="Node2D" type="Node2D" unique_id=1130991843]
+script = ExtResource("1_1mx04")
 
 [node name="Tálca" type="CharacterBody2D" parent="." unique_id=1621433082]
 script = ExtResource("1_6ti0s")
@@ -45,7 +47,6 @@ shape = SubResource("RectangleShape2D_bx8n8")
 script = ExtResource("2_blt18")
 padlo = NodePath("../padló")
 lives_label = NodePath("../CanvasLayer/lives")
-elet = null
 game_over_label = NodePath("../CanvasLayer/gameover")
 
 [node name="Sprite2D" type="Sprite2D" parent="labda" unique_id=694357647]
@@ -100,9 +101,11 @@ offset_bottom = 95899.0
 theme_override_font_sizes/font_size = 70
 
 [node name="blokk" type="StaticBody2D" parent="." unique_id=839941617 groups=["blokkok"]]
+visible = false
 position = Vector2(628, 209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blokk" unique_id=768866310]
+visible = false
 position = Vector2(-570, -189)
 shape = SubResource("RectangleShape2D_ft2n7")
 
@@ -114,6 +117,7 @@ offset_bottom = -171.0
 color = Color(0.9666667, 1, 0, 1)
 
 [node name="blokk2" type="StaticBody2D" parent="." unique_id=1750272675 groups=["blokkok"]]
+visible = false
 position = Vector2(628, 209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blokk2" unique_id=1743364767]
@@ -128,6 +132,7 @@ offset_bottom = -171.0
 color = Color(0.9666667, 1, 0, 1)
 
 [node name="blokk3" type="StaticBody2D" parent="." unique_id=635436613 groups=["blokkok"]]
+visible = false
 position = Vector2(628, 209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blokk3" unique_id=2107613989]
@@ -141,7 +146,8 @@ offset_right = -314.0
 offset_bottom = -172.0
 color = Color(0.9666667, 1, 0, 1)
 
-[node name="blokk4" type="StaticBody2D" parent="." unique_id=1506150592]
+[node name="blokk4" type="StaticBody2D" parent="." unique_id=1506150592 groups=["blokkok"]]
+visible = false
 position = Vector2(628, 209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blokk4" unique_id=636118004]
@@ -155,7 +161,8 @@ offset_right = -210.0
 offset_bottom = -171.0
 color = Color(0.9666667, 1, 0, 1)
 
-[node name="blokk5" type="StaticBody2D" parent="." unique_id=1248086047]
+[node name="blokk5" type="StaticBody2D" parent="." unique_id=1248086047 groups=["blokkok"]]
+visible = false
 position = Vector2(628, 209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blokk5" unique_id=1484158208]
@@ -169,7 +176,8 @@ offset_right = -109.0
 offset_bottom = -168.0
 color = Color(0.9666667, 1, 0, 1)
 
-[node name="blokk6" type="StaticBody2D" parent="." unique_id=491065207]
+[node name="blokk6" type="StaticBody2D" parent="." unique_id=491065207 groups=["blokkok"]]
+visible = false
 position = Vector2(628, 209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blokk6" unique_id=1209024489]
