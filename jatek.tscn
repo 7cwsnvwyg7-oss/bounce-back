@@ -24,10 +24,7 @@ size = Vector2(2, 649)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nbp6"]
 size = Vector2(1150, 2)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft2n7"]
-size = Vector2(100, 35)
-
-[node name="Node2D" type="Node2D" unique_id=1130991843]
+[node name="jatek" type="Node2D" unique_id=1130991843]
 script = ExtResource("1_1mx04")
 
 [node name="Tálca" type="CharacterBody2D" parent="." unique_id=1621433082]
@@ -44,11 +41,13 @@ color = Color(0.1333332, 0, 1, 1)
 position = Vector2(310, 604)
 shape = SubResource("RectangleShape2D_bx8n8")
 
-[node name="labda" type="CharacterBody2D" parent="." unique_id=692133442 node_paths=PackedStringArray("padlo", "lives_label", "game_over_label")]
+[node name="labda" type="CharacterBody2D" parent="." unique_id=692133442 node_paths=PackedStringArray("padlo", "lives_label", "game_over_label", "nyertel", "score_label")]
 script = ExtResource("2_blt18")
 padlo = NodePath("../padló")
 lives_label = NodePath("../CanvasLayer/lives")
 game_over_label = NodePath("../CanvasLayer/gameover")
+nyertel = NodePath("../CanvasLayer/nyertel")
+score_label = NodePath("../CanvasLayer/score")
 
 [node name="Sprite2D" type="Sprite2D" parent="labda" unique_id=694357647]
 position = Vector2(307, 311)
@@ -101,95 +100,17 @@ offset_right = 835.0
 offset_bottom = 95899.0
 theme_override_font_sizes/font_size = 70
 
-[node name="blokk" type="StaticBody2D" parent="." unique_id=839941617 groups=["blokkok"]]
-visible = false
-position = Vector2(628, 209)
+[node name="nyertel" type="Label" parent="CanvasLayer" unique_id=892763281]
+offset_left = 270.0
+offset_top = 160.0
+offset_right = 883.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 70
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blokk" unique_id=768866310]
-visible = false
-position = Vector2(-570, -189)
-shape = SubResource("RectangleShape2D_ft2n7")
-
-[node name="ColorRect" type="ColorRect" parent="blokk" unique_id=209905680]
-offset_left = -623.0
-offset_top = -206.0
-offset_right = -523.0
-offset_bottom = -171.0
-color = Color(0.9666667, 1, 0, 1)
-
-[node name="blokk2" type="StaticBody2D" parent="." unique_id=1750272675 groups=["blokkok"]]
-visible = false
-position = Vector2(628, 209)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blokk2" unique_id=1743364767]
-position = Vector2(-470, -189)
-shape = SubResource("RectangleShape2D_ft2n7")
-
-[node name="ColorRect" type="ColorRect" parent="blokk2" unique_id=555169711]
-offset_left = -517.0
-offset_top = -206.0
-offset_right = -417.0
-offset_bottom = -171.0
-color = Color(0.9666667, 1, 0, 1)
-
-[node name="blokk3" type="StaticBody2D" parent="." unique_id=635436613 groups=["blokkok"]]
-visible = false
-position = Vector2(628, 209)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blokk3" unique_id=2107613989]
-position = Vector2(-367, -193)
-shape = SubResource("RectangleShape2D_ft2n7")
-
-[node name="ColorRect" type="ColorRect" parent="blokk3" unique_id=250279961]
-offset_left = -414.0
-offset_top = -207.0
-offset_right = -314.0
-offset_bottom = -172.0
-color = Color(0.9666667, 1, 0, 1)
-
-[node name="blokk4" type="StaticBody2D" parent="." unique_id=1506150592 groups=["blokkok"]]
-visible = false
-position = Vector2(628, 209)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blokk4" unique_id=636118004]
-position = Vector2(-264, -186)
-shape = SubResource("RectangleShape2D_ft2n7")
-
-[node name="ColorRect" type="ColorRect" parent="blokk4" unique_id=1547272204]
-offset_left = -310.0
-offset_top = -206.0
-offset_right = -210.0
-offset_bottom = -171.0
-color = Color(0.9666667, 1, 0, 1)
-
-[node name="blokk5" type="StaticBody2D" parent="." unique_id=1248086047 groups=["blokkok"]]
-visible = false
-position = Vector2(628, 209)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blokk5" unique_id=1484158208]
-position = Vector2(-158, -185)
-shape = SubResource("RectangleShape2D_ft2n7")
-
-[node name="ColorRect" type="ColorRect" parent="blokk5" unique_id=707445996]
-offset_left = -209.0
-offset_top = -203.0
-offset_right = -109.0
-offset_bottom = -168.0
-color = Color(0.9666667, 1, 0, 1)
-
-[node name="blokk6" type="StaticBody2D" parent="." unique_id=491065207 groups=["blokkok"]]
-visible = false
-position = Vector2(628, 209)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blokk6" unique_id=1209024489]
-position = Vector2(-58, -185)
-shape = SubResource("RectangleShape2D_ft2n7")
-
-[node name="ColorRect" type="ColorRect" parent="blokk6" unique_id=1443091534]
-offset_left = -113.0
-offset_top = -204.0
-offset_right = -13.0
-offset_bottom = -169.0
-color = Color(0.9666667, 1, 0, 1)
+[node name="score" type="Label" parent="CanvasLayer" unique_id=1162104349]
+offset_left = 1016.0
+offset_top = 40.0
+offset_right = 1134.0
+offset_bottom = 88.0
 
 [connection signal="child_entered_tree" from="labda" to="padló/padló" method="_on_labda_child_entered_tree"]

@@ -7,11 +7,12 @@ func _ready():
 	blokkok_letrehozasa()
 
 func blokkok_letrehozasa():
-	var oszlopok := 12
-	var sorok := 5
+	var oszlopok := 8
+	var sorok := 1
 
 	# Ezt csak egyszer sorsoljuk ki, a ciklusok előtt.
 	var extra_élet := randi_range(0, oszlopok - 1)
+	@warning_ignore("unused_variable")
 	var extra_labda_oszlop := randi_range(0, oszlopok - 1)
 
 	var teljes_szelesseg := oszlopok * BLOKK_MERET.x + (oszlopok - 1) * TAVOLSAG
@@ -37,7 +38,7 @@ func blokkok_letrehozasa():
 				Vector2(-35, 12)
 			])
 
-			if sor == 4 and oszlop == extra_élet:
+			if sor == 2 and oszlop == extra_élet or sor ==0 and oszlop == extra_élet:
 				kep.color = Color.GOLD
 				blokk.add_to_group("extra_élet")
 			else:

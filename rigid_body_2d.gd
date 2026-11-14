@@ -5,7 +5,10 @@ extends CharacterBody2D
 @export var padlo: StaticBody2D
 @export var lives_label: Label
 @export var game_over_label: Label
+@export var nyertel: Label
+@export var score_label: Label
 
+var score: int = 0
 var direction := Vector2(1, -1).normalized()
 
 
@@ -31,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 	# A padló találatakor életet veszít.
 	if utkozott_test == padlo:
-		elet -= 1
+		elet += 1
 
 		if is_instance_valid(lives_label):
 			lives_label.text = "Élet: " + str(elet)
@@ -44,7 +47,17 @@ func _physics_process(delta: float) -> void:
 
 	# A blokkok találatkor eltűnnek.
 	elif utkozott_test is Node and utkozott_test.is_in_group("blokkok"):
+		var maradek = get_tree().get_nodes_in_group("blokkok").size()
+		print("Blokkok száma találat előtt: ", maradek)
+
+		if maradek <= 1:
+			print("Nyertél!")
+			get_tree().paused = true
+			nyertel.text = "Nyertél"
+			nyertel.show()
 		utkozott_test.queue_free()
+		score += 1
+		score_label.text = "pont: "+str(score)
 		
 		if utkozott_test.is_in_group("extra_élet"):
 			elet += 1
